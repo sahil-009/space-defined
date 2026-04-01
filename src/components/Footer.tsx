@@ -5,10 +5,10 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div>
             <a href="#" className="text-2xl font-bold text-primary-foreground">
-              MODULAR<span className="text-gradient-gold">.</span>
+              CABINET FACTORY<span className="text-gradient-gold">.</span>
             </a>
             <p className="mt-4 text-sm text-primary-foreground/50 leading-relaxed">
-              Next-generation modular interiors engineered with precision and
+              Next-generation CABINET FACTORY interiors engineered with precision and
               elegance.
             </p>
           </div>
@@ -49,7 +49,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-primary-foreground/40">
-            © {new Date().getFullYear()} Modular. All rights reserved.
+            © {new Date().getFullYear()} CABINET FACTORY. All rights reserved.
           </p>
           <div className="flex gap-6">
             {["Privacy", "Terms", "Cookies"].map((l) => (

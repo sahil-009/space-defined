@@ -4,17 +4,20 @@ import { gsap } from "gsap";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subtextRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(videoRef.current, {
-        scale: 1.1,
+      // Animate the 3D video container entrance
+      gsap.from(videoContainerRef.current, {
+        scale: 0.8,
         opacity: 0,
-        duration: 1.5,
+        rotateY: -30,
+        rotateX: 15,
+        duration: 1.8,
         ease: "power3.out",
         delay: 0.3,
       });
@@ -47,25 +50,74 @@ const HeroSection = () => {
     return () => ctx.revert();
   }, []);
 
+  // Mouse-follow parallax for the 3D video element
+  useEffect(() => {
+    const container = videoContainerRef.current;
+    const section = sectionRef.current;
+    if (!container || !section) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = section.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 to 0.5
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+      gsap.to(container, {
+        rotateY: x * 12,
+        rotateX: -y * 8,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+    };
+
+    const handleMouseLeave = () => {
+      gsap.to(container, {
+        rotateY: 0,
+        rotateX: 0,
+        duration: 0.8,
+        ease: "elastic.out(1, 0.5)",
+      });
+    };
+
+    section.addEventListener("mousemove", handleMouseMove);
+    section.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      section.removeEventListener("mousemove", handleMouseMove);
+      section.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
   return (
     <section
       ref={sectionRef}
       className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-cream"
     >
+      {/* Subtle ambient glow behind the 3D element */}
+      <div className="hero-ambient-glow" />
+
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Video Left */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl order-1">
-            <video
-              ref={videoRef}
-              src="/hero-video.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-[300px] sm:h-[400px] lg:h-[520px] object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 to-transparent pointer-events-none" />
+          {/* 3D Video Left */}
+          <div className="relative order-1 hero-3d-perspective">
+            <div
+              ref={videoContainerRef}
+              className="hero-3d-video-container"
+            >
+              {/* Floating glow ring */}
+              <div className="hero-glow-ring" />
+
+              {/* Main video element */}
+              <div className="hero-video-wrapper">
+                <video
+                  src="/hero-3d-video.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="hero-video-element mix-blend-multiply"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Text Right */}

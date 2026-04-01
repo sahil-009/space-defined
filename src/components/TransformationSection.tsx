@@ -32,6 +32,19 @@ const TransformationSection = () => {
         },
       });
 
+      gsap.from(".transform-image", {
+        y: 100,
+        opacity: 0,
+        scale: 0.95,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+        },
+      });
+
       gsap.from(".parallax-layer-1", {
         y: 100,
         scrollTrigger: {
@@ -71,15 +84,23 @@ const TransformationSection = () => {
           The Concept
         </p>
         <h2 className="transform-headline text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight text-foreground">
-          From concept to reality —
+          We transform —
           <br />
-          <span className="text-gradient-gold">engineered transformations.</span>
+          <span className="text-gradient-gold">concept to reality.</span>
         </h2>
         <p className="transform-sub mt-8 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
           Every piece is meticulously designed to maximize space, functionality,
-          and aesthetic harmony. Our modular systems adapt to your life, not the
-          other way around.
+          and aesthetic harmony. We transform your environment to adapt to your life,
+          not the other way around.
         </p>
+
+        <div className="transform-image mt-16 relative group bg-transparent">
+          <img
+            src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/b56a60245827101.69b6343ea123c.gif"
+            alt="Space Transformation"
+            className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-105 mix-blend-multiply"
+          />
+        </div>
       </div>
     </section>
   );

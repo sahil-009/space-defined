@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 const panels = [
   {
     title: "Living Room",
-    desc: "Modular sofas and storage that transform open spaces into organized sanctuaries.",
+    desc: "CABINET FACTORY sofas and storage that transform open spaces into organized sanctuaries.",
     gradient: "from-amber-900/80 to-stone-900/80",
   },
   {

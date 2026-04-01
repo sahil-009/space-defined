@@ -12,7 +12,7 @@ const testimonials = [
     role: "Interior Designer",
   },
   {
-    quote: "We've worked with many brands — Modular is in a league of its own. Truly premium, truly transformative.",
+    quote: "We've worked with many brands — CABINET FACTORY is in a league of its own. Truly premium, truly transformative.",
     name: "Rahul Kapoor",
     role: "Architect, Delhi",
   },
@@ -42,11 +42,10 @@ const TestimonialsSection = () => {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ${
-                i === active
+              className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ${i === active
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4 pointer-events-none"
-              }`}
+                }`}
             >
               <blockquote className="text-xl sm:text-2xl lg:text-3xl font-light text-foreground leading-relaxed mb-8 max-w-3xl italic">
                 "{t.quote}"
@@ -62,9 +61,8 @@ const TestimonialsSection = () => {
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-500 ${
-                i === active ? "bg-accent w-8" : "bg-border hover:bg-muted-foreground/30"
-              }`}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-500 ${i === active ? "bg-accent w-8" : "bg-border hover:bg-muted-foreground/30"
+                }`}
             />
           ))}
         </div>

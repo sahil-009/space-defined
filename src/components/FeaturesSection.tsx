@@ -13,7 +13,7 @@ const features = [
   },
   {
     icon: Layers,
-    title: "Modular Flexibility",
+    title: "CABINET FACTORY Flexibility",
     desc: "Infinitely reconfigurable systems that adapt to evolving needs and spatial constraints.",
   },
   {

@@ -48,7 +48,7 @@ const CTASection = () => {
         </h2>
         <p className="text-lg text-primary-foreground/60 mb-12 max-w-xl mx-auto leading-relaxed">
           Book a free consultation with our design team and discover what's
-          possible with modular precision.
+          possible with CABINET FACTORY precision.
         </p>
         <Button
           size="lg"

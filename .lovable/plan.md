@@ -1,9 +1,9 @@
 
 
-# Ultra-Premium Modular Furniture Website
+# Ultra-Premium CABINET FACTORY Furniture Website
 
 ## Overview
-A cinematic, Apple/Tesla-inspired website for a modular furniture brand with smooth GSAP animations, parallax scrolling, and premium UX. The uploaded video will loop in the hero section.
+A cinematic, Apple/Tesla-inspired website for a CABINET FACTORY furniture brand with smooth GSAP animations, parallax scrolling, and premium UX. The uploaded video will loop in the hero section.
 
 ## Design System
 - **Colors**: Deep charcoal (#1a1a1a) primary, subtle gold (#c9a96e) accent, white/soft gray backgrounds
@@ -29,7 +29,7 @@ A cinematic, Apple/Tesla-inspired website for a modular furniture brand with smo
 - Layered depth elements moving at different speeds
 
 ### 4. Features / Engineering Grid
-- 4 feature cards: Precision Engineering, Modular Flexibility, Premium Materials, Smart Storage
+- 4 feature cards: Precision Engineering, CABINET FACTORY Flexibility, Premium Materials, Smart Storage
 - Icons with hover lift + subtle glow effect
 - Staggered scroll-triggered entrance
 

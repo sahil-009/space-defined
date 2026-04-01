@@ -82,6 +82,10 @@
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #8C5A3C !important;
+  }
 }
 
 @keyframes aurora {

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { gsap } from "gsap";
 
@@ -8,6 +8,48 @@ const HeroSection = () => {
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subtextRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+
+  const [typedLine1, setTypedLine1] = useState("");
+  const [typedLine2, setTypedLine2] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+
+  // Typewriter effect
+  useEffect(() => {
+    let isMounted = true;
+    const text1 = "Transform Spaces.";
+    const text2 = "Redefine Living.";
+
+    const typeText = async () => {
+      // Delay to sync with GSAP entrance
+      await new Promise((r) => setTimeout(r, 600));
+
+      for (let i = 0; i <= text1.length; i++) {
+        if (!isMounted) return;
+        setTypedLine1(text1.substring(0, i));
+        await new Promise((r) => setTimeout(r, 50));
+      }
+
+      await new Promise((r) => setTimeout(r, 200));
+
+      for (let i = 0; i <= text2.length; i++) {
+        if (!isMounted) return;
+        setTypedLine2(text2.substring(0, i));
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    };
+
+    typeText();
+
+    // Blinking cursor
+    const cursorInterval = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+
+    return () => {
+      isMounted = false;
+      clearInterval(cursorInterval);
+    };
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -124,11 +166,20 @@ const HeroSection = () => {
           <div className="order-2 flex flex-col gap-8">
             <h1
               ref={headlineRef}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight text-foreground"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight"
             >
-              Transform Spaces.
+              <span className="!text-foreground">{typedLine1 || "\u00A0"}</span>
               <br />
-              <span className="text-gradient-gold">Redefine Living.</span>
+              <span className="text-[#8C5A3C]">
+                {typedLine2 || (typedLine1 === "Transform Spaces." ? "" : "\u00A0")}
+                <span
+                  className={`font-light transition-opacity duration-100 ${
+                    showCursor ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  |
+                </span>
+              </span>
             </h1>
 
             <p

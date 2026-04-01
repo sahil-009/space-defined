@@ -94,12 +94,21 @@ const TransformationSection = () => {
           not the other way around.
         </p>
 
-        <div className="transform-image mt-16 relative group bg-transparent">
-          <img
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/b56a60245827101.69b6343ea123c.gif"
-            alt="Space Transformation"
-            className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-105 mix-blend-multiply"
-          />
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 relative bg-transparent">
+          <div className="transform-image relative group rounded-3xl overflow-hidden shadow-sm border border-foreground/5 bg-white/50">
+            <img
+              src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/b56a60245827101.69b6343ea123c.gif"
+              alt="Modular Interior Design Concept 1"
+              className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105 mix-blend-multiply"
+            />
+          </div>
+          <div className="transform-image relative group rounded-3xl overflow-hidden shadow-sm border border-foreground/5 bg-white/50">
+            <img
+              src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/2e45e9245827101.69b6343ea54c8.gif"
+              alt="Modular Interior Design Concept 2"
+              className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105 mix-blend-multiply"
+            />
+          </div>
         </div>
       </div>
     </section>

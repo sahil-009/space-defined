@@ -59,7 +59,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Card */}
       {mobileOpen && (
         <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-background/95 backdrop-blur-2xl border border-foreground/10 rounded-3xl p-6 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300">
           <div className="flex flex-col gap-2">

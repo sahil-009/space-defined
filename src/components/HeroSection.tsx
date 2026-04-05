@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { gsap } from "gsap";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -85,9 +86,9 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-cream">
-      <div className="hero-ambient-glow" />
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+    <section ref={sectionRef} className="relative min-h-screen overflow-hidden">
+      <AuroraBackground className="min-h-screen w-full flex items-center pt-20 bg-cream" showRadialGradient={true}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative order-1 hero-3d-perspective">
             <div ref={videoContainerRef} className="hero-3d-video-container">
@@ -136,6 +137,7 @@ const HeroSection = () => {
           </svg>
         </a>
       </div>
+      </AuroraBackground>
     </section>
   );
 };

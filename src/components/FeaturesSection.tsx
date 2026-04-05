@@ -105,34 +105,58 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        {/* Feature cards grid */}
-        <div className="feature-grid grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {features.map((f, i) => (
-            <div
-              key={i}
-              className="feature-card group relative p-8 rounded-3xl bg-background/80 backdrop-blur-sm border border-border/60 hover:border-accent/40 transition-all duration-600 hover:-translate-y-3 hover:shadow-2xl hover:shadow-accent/8 cursor-default overflow-hidden"
-            >
-              {/* Top accent line */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
-
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-500">
-                <f.icon className="w-7 h-7 text-accent" strokeWidth={1.5} />
-              </div>
-
-              {/* Stat */}
-              <div className="mb-4">
-                <span className="text-3xl font-black text-foreground">{f.stat}</span>
-                <span className="text-xs text-muted-foreground ml-2 tracking-wider uppercase">{f.statLabel}</span>
-              </div>
-
-              <h3 className="text-lg font-bold text-foreground mb-3">{f.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-
-              {/* Background glow on hover */}
-              <div className="absolute -bottom-8 -right-8 w-32 h-32 rounded-full bg-accent/0 group-hover:bg-accent/5 blur-2xl transition-all duration-700 pointer-events-none" />
+        {/* Alternating Layout Grid */}
+        <div className="mt-20 flex flex-col gap-24 lg:gap-32">
+          {/* Row 1 */}
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+            <div className="flex-1 lg:pr-10 lg:text-left text-center">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight mb-6">Precision engineering.</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-md mx-auto lg:mx-0">
+                Each panel is expertly machined for a seamless fit, ensuring long lasting durability.
+              </p>
             </div>
-          ))}
+            <div className="flex-1 w-full">
+              <img 
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2831&auto=format&fit=crop" 
+                alt="Precision Engineering" 
+                className="w-full h-[400px] lg:h-[500px] object-cover rounded-[2rem] shadow-2xl lg:translate-x-4 hover:scale-[1.02] transition-transform duration-700" 
+              />
+            </div>
+          </div>
+
+          {/* Row 2 */}
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-20">
+            <div className="flex-1 lg:pl-10 lg:text-left text-center">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight mb-6">Premium materials.</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-md mx-auto lg:mx-0">
+                We select rich walnut, matte charcoal, and subtle woods for a refined, contemporary feel.
+              </p>
+            </div>
+            <div className="flex-1 w-full">
+              <img 
+                src="https://images.unsplash.com/photo-1558211583-d26f610e1eba?q=80&w=1000&auto=format&fit=crop" 
+                alt="Premium materials" 
+                className="w-full h-[400px] lg:h-[500px] object-cover rounded-[2rem] shadow-2xl lg:-translate-x-4 hover:scale-[1.02] transition-transform duration-700" 
+              />
+            </div>
+          </div>
+
+          {/* Row 3 */}
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+            <div className="flex-1 lg:pr-10 lg:text-left text-center">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight mb-6">Factory direct.</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-md mx-auto lg:mx-0">
+                Enjoy exceptional pricing and service from our own state-of-the-art manufacturing facility.
+              </p>
+            </div>
+            <div className="flex-1 w-full">
+              <img 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop" 
+                alt="Factory direct" 
+                className="w-full h-[400px] lg:h-[500px] object-cover rounded-[2rem] shadow-2xl lg:translate-x-4 hover:scale-[1.02] transition-transform duration-700" 
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

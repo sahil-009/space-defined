@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,32 +53,24 @@ const VideoSection = () => {
 
   return (
     <section ref={sectionRef} className="relative bg-cream">
-      {/* Full-width video with cinematic scaling */}
+      {/* Full-width beam background with cinematic scaling */}
       <div className="video-frame relative w-full h-[60vh] lg:h-[85vh] overflow-hidden">
-        <video
-          ref={videoRef}
-          src="/kitchen.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        {/* Subtle dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
-
-        {/* Centered text on video */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center px-6">
+        <BackgroundBeamsWithCollision className="h-full w-full bg-charcoal/20">
+          <div className="text-center px-6 relative z-20">
             <p className="text-sm font-semibold tracking-[0.3em] uppercase text-accent mb-5">Immersive Experience</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight max-w-4xl">
-              Where Design
-              <br />
-              <span className="text-gradient-gold">Meets Craft</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-foreground leading-tight max-w-4xl tracking-tight">
+              Where Design{" "}
+              <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))] italic">
+                <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
+                  <span className="">Meets Craft.</span>
+                </div>
+                <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
+                  <span className="">Meets Craft.</span>
+                </div>
+              </div>
             </h2>
           </div>
-        </div>
+        </BackgroundBeamsWithCollision>
       </div>
 
       {/* Content below video */}

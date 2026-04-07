@@ -62,20 +62,44 @@ const BeforeAfterSection = () => {
           onPointerLeave={onPointerUp}
           onPointerMove={onPointerMove}
         >
-          <div className="absolute inset-0 bg-charcoal flex items-center justify-center">
-            <div className="text-center">
-              <p className="text-accent text-sm tracking-[0.25em] uppercase mb-2">After</p>
-              <p className="text-white text-2xl sm:text-4xl font-extrabold">Transformed</p>
-              <p className="text-white/50 mt-2 text-sm">Modern, elegant, functional</p>
+          {/* ── BEFORE panel (empty room) — base layer, always visible on the RIGHT ── */}
+          <div className="absolute inset-0">
+            <img
+              src="/before-room.jpg"
+              alt="Before — empty room with wooden floor and ocean view"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* overlay */}
+            <div className="absolute inset-0 bg-white/10 pointer-events-none" />
+            {/* Centered label */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+              <p className="text-white text-[11px] font-black tracking-[0.38em] uppercase mb-2" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}>Before</p>
+              <p className="text-white text-2xl sm:text-4xl font-extrabold" style={{ textShadow: "0 2px 16px rgba(0,0,0,0.8)" }}>Original Space</p>
+              <p className="text-white/85 text-sm mt-2 font-semibold" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}>Bare · Untouched · Waiting</p>
             </div>
           </div>
-          <div className="absolute inset-0 bg-muted flex items-center justify-center" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
-            <div className="text-center">
-              <p className="text-accent text-sm tracking-[0.25em] uppercase mb-2">Before</p>
-              <p className="text-foreground text-2xl sm:text-4xl font-extrabold">Original Space</p>
-              <p className="text-muted-foreground mt-2 text-sm">Untouched, waiting for design</p>
+
+          {/* ── AFTER panel (decorated room) — clips from the LEFT as user drags ── */}
+          <div
+            className="absolute inset-0"
+            style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+          >
+            <img
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1400&q=90"
+              alt="After — luxuriously decorated living room"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* dark vignette */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 pointer-events-none" />
+            {/* Centered label */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+              <p className="text-white text-[11px] font-black tracking-[0.38em] uppercase mb-2" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}>After</p>
+              <p className="text-white text-2xl sm:text-4xl font-extrabold" style={{ textShadow: "0 2px 16px rgba(0,0,0,0.8)" }}>Transformed</p>
+              <p className="text-white/85 text-sm mt-2 font-semibold" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}>Elegant · Warm · Functional</p>
             </div>
           </div>
+
+          {/* ── Divider handle ── */}
           <div className="absolute top-0 bottom-0 w-[2px] bg-accent z-10" style={{ left: `${position}%` }}>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/30">
               <span className="text-white text-sm font-bold">⟷</span>

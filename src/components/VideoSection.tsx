@@ -2,12 +2,12 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import Model3D from "@/components/Model3D";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const VideoSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -38,15 +38,6 @@ const VideoSection = () => {
         scrollTrigger: { trigger: ".video-content", start: "top 85%" },
       });
 
-      // Stats counter animation
-      gsap.from(".video-stat", {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
-        scrollTrigger: { trigger: ".video-stats", start: "top 90%" },
-      });
     }, sectionRef);
     return () => ctx.revert();
   }, []);
@@ -92,26 +83,15 @@ const VideoSection = () => {
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="video-stats grid grid-cols-2 gap-6">
-            {[
-              { value: "500+", label: "Projects Delivered" },
-              { value: "98%", label: "Client Satisfaction" },
-              { value: "15+", label: "Years Experience" },
-              { value: "40+", label: "Material Options" },
-            ].map((stat, i) => (
-              <div
-                key={i}
-                className="video-stat group p-6 rounded-2xl bg-background border border-border/60 hover:border-accent/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5 text-center"
-              >
-                <span className="block text-3xl lg:text-4xl font-black text-foreground group-hover:text-accent transition-colors duration-500">
-                  {stat.value}
-                </span>
-                <span className="text-xs text-muted-foreground tracking-wider uppercase mt-2 block">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+          {/* 3D Model — raw Three.js, GLB camera + looping animation */}
+          <div
+            className="w-full rounded-2xl overflow-hidden"
+            style={{ aspectRatio: "4 / 3", minHeight: "320px" }}
+          >
+            <Model3D
+              src="/models/newoutput.glb"
+              style={{ width: "100%", height: "100%" }}
+            />
           </div>
         </div>
       </div>

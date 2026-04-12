@@ -61,29 +61,6 @@ const HeroSection = () => {
     return () => ctx.revert();
   }, []);
 
-  useEffect(() => {
-    const container = videoContainerRef.current;
-    const section = sectionRef.current;
-    if (!container || !section) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = section.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      gsap.to(container, { rotateY: x * 12, rotateX: -y * 8, duration: 0.6, ease: "power2.out" });
-    };
-
-    const handleMouseLeave = () => {
-      gsap.to(container, { rotateY: 0, rotateX: 0, duration: 0.8, ease: "elastic.out(1, 0.5)" });
-    };
-
-    section.addEventListener("mousemove", handleMouseMove);
-    section.addEventListener("mouseleave", handleMouseLeave);
-    return () => {
-      section.removeEventListener("mousemove", handleMouseMove);
-      section.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
 
   return (
     <section ref={sectionRef} className="relative min-h-screen overflow-hidden">
@@ -94,7 +71,7 @@ const HeroSection = () => {
             <div ref={videoContainerRef} className="hero-3d-video-container">
               <div className="hero-glow-ring" />
               <div className="hero-video-wrapper relative p-4 bg-transparent border-0 shadow-none">
-                <video src="/hero-video.mp4" autoPlay loop muted playsInline className="hero-video-element mix-blend-multiply" />
+                <video src="/hero-3d-video.mp4" autoPlay loop muted playsInline className="hero-video-element mix-blend-multiply" />
               </div>
             </div>
           </div>

@@ -9,25 +9,25 @@ const showcaseItems = [
     title: "Modern Kitchen",
     category: "Kitchen Design",
     desc: "Sleek handleless cabinets with integrated lighting and premium stone countertops.",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+    image: "/pic7.jpeg",
   },
   {
     title: "Minimalist Wardrobe",
     category: "Bedroom Storage",
     desc: "Floor-to-ceiling modular wardrobes with soft-close mechanisms and hidden drawers.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
+    image: "/pic4.jpeg",
   },
   {
     title: "Executive Office",
     category: "Workspace",
     desc: "Fold-away desk systems with cable management and acoustic paneling.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    image: "/pic3.jpeg",
   },
   {
     title: "Living Room Unit",
     category: "Entertainment",
     desc: "Modular TV units with concealed storage, ambient backlighting, and wine rack integration.",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+    image: "/pic1.jpeg",
   },
 ];
 

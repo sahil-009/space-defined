@@ -117,7 +117,7 @@ const FeaturesSection = () => {
             </div>
             <div className="flex-1 w-full">
               <img 
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2831&auto=format&fit=crop" 
+                src="/pic9.jpeg" 
                 alt="Precision Engineering" 
                 className="w-full h-[400px] lg:h-[500px] object-cover rounded-[2rem] shadow-2xl lg:translate-x-4 hover:scale-[1.02] transition-transform duration-700" 
               />
@@ -134,7 +134,7 @@ const FeaturesSection = () => {
             </div>
             <div className="flex-1 w-full">
               <img 
-                src="https://images.unsplash.com/photo-1558211583-d26f610e1eba?q=80&w=1000&auto=format&fit=crop" 
+                src="/pic6.jpeg" 
                 alt="Premium materials" 
                 className="w-full h-[400px] lg:h-[500px] object-cover rounded-[2rem] shadow-2xl lg:-translate-x-4 hover:scale-[1.02] transition-transform duration-700" 
               />
@@ -151,7 +151,7 @@ const FeaturesSection = () => {
             </div>
             <div className="flex-1 w-full">
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop" 
+                src="/pic8.jpeg" 
                 alt="Factory direct" 
                 className="w-full h-[400px] lg:h-[500px] object-cover rounded-[2rem] shadow-2xl lg:translate-x-4 hover:scale-[1.02] transition-transform duration-700" 
               />

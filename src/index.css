@@ -301,3 +301,40 @@ html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+/* ─── Footer Utilities ─── */
+
+.footer-glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+@keyframes footer-shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.footer-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+  animation: footer-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes footer-glow-pulse {
+  0%, 100% { opacity: 0.04; }
+  50%       { opacity: 0.08; }
+}
+
+.footer-glow-orb {
+  animation: footer-glow-pulse 5s ease-in-out infinite;
+}
+
+/* ─── Mobile carousel scrollbar hide ─── */
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+

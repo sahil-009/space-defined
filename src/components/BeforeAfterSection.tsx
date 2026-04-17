@@ -71,11 +71,11 @@ const BeforeAfterSection = () => {
             />
             {/* overlay */}
             <div className="absolute inset-0 bg-white/10 pointer-events-none" />
-            {/* Centered label */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+            {/* Top-aligned label to avoid handle collision */}
+            <div className="absolute inset-0 flex flex-col items-center justify-start pt-8 sm:pt-16 text-center pointer-events-none px-4">
               <p className="text-white text-[11px] font-black tracking-[0.38em] uppercase mb-2" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}>Before</p>
               <p className="text-white text-2xl sm:text-4xl font-extrabold" style={{ textShadow: "0 2px 16px rgba(0,0,0,0.8)" }}>Original Space</p>
-              <p className="text-white/85 text-sm mt-2 font-semibold" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}>Bare · Untouched · Waiting</p>
+              <p className="text-white/85 text-[10px] sm:text-sm mt-2 font-semibold" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}>Bare · Untouched · Waiting</p>
             </div>
           </div>
 
@@ -85,17 +85,17 @@ const BeforeAfterSection = () => {
             style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
           >
             <img
-              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1400&q=90"
+              src="/pic5.jpeg"
               alt="After — luxuriously decorated living room"
               className="absolute inset-0 w-full h-full object-cover"
             />
             {/* dark vignette */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 pointer-events-none" />
-            {/* Centered label */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/10 pointer-events-none" />
+            {/* Top-aligned label to avoid handle collision */}
+            <div className="absolute inset-0 flex flex-col items-center justify-start pt-8 sm:pt-16 text-center pointer-events-none px-4">
               <p className="text-white text-[11px] font-black tracking-[0.38em] uppercase mb-2" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}>After</p>
               <p className="text-white text-2xl sm:text-4xl font-extrabold" style={{ textShadow: "0 2px 16px rgba(0,0,0,0.8)" }}>Transformed</p>
-              <p className="text-white/85 text-sm mt-2 font-semibold" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}>Elegant · Warm · Functional</p>
+              <p className="text-white/85 text-[10px] sm:text-sm mt-2 font-semibold" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}>Elegant · Warm · Functional</p>
             </div>
           </div>
 

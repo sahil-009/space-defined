@@ -8,7 +8,7 @@ const materials = [
   {
     name: "Solid Oak",
     desc: "Warm, durable hardwood with natural grain patterns that age beautifully over decades.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80",
+    image: "/pic2.jpeg",
     color: "from-amber-800/90 to-amber-950/90",
     texture: "Natural Grain",
     origin: "European Forests",
@@ -24,7 +24,7 @@ const materials = [
   {
     name: "Matte Lacquer",
     desc: "Silky-smooth anti-fingerprint finish in a curated palette of neutrals and bold accents.",
-    image: "https://images.unsplash.com/photo-1615529328331-f8917597711f?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80",
     color: "from-zinc-700/90 to-zinc-900/90",
     texture: "Satin Smooth",
     origin: "German Engineering",

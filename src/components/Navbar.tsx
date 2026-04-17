@@ -21,15 +21,15 @@ const Navbar = () => {
     >
       <div
         className={`mx-auto flex items-center justify-between transition-all duration-500 ease-in-out ${scrolled
-            ? "max-w-5xl bg-background/80 backdrop-blur-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-foreground/5 rounded-full px-6 lg:px-8 h-16 sm:h-20"
+            ? "max-w-5xl bg-background/95 backdrop-blur-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-foreground/5 rounded-full px-6 lg:px-8 h-16 sm:h-20"
             : "max-w-7xl bg-transparent border-transparent h-20"
           }`}
       >
         <a
           href="#"
-          className="text-2xl font-black tracking-tighter text-foreground hover:opacity-80 transition-opacity"
+          className="hover:opacity-80 transition-opacity flex-shrink-0"
         >
-          CABINET FACTORY<span className="text-[#8C5A3C]">.</span>
+          <img src="/logo.jpeg" alt="Cabinet Factory" className="h-10 sm:h-12 w-auto object-contain rounded-md" />
         </a>
 
         <div className="hidden md:flex items-center gap-10">

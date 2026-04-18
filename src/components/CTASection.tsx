@@ -14,11 +14,8 @@ interface Sticker {
   src: string;
   alt: string;
   from: StickerFrom;
-  top: string;
-  left?: string;
-  right?: string;
   rotate: number;
-  width: string;
+  className: string;
 }
 
 const STICKERS: Sticker[] = [
@@ -28,20 +25,16 @@ const STICKERS: Sticker[] = [
     src: "/sticker_sofa.png",
     alt: "Luxury sofa",
     from: "left",
-    top: "12%",
-    left: "5%",
     rotate: -8,
-    width: "clamp(130px, 16vw, 240px)",
+    className: "top-[2%] -left-[2%] w-[100px] sm:-left-[0%] md:top-[10%] md:left-[2%] md:w-[clamp(130px,16vw,240px)]",
   },
   {
     id: "table",
     src: "/sticker_table.png",
     alt: "Side table",
     from: "left",
-    top: "45%",
-    left: "10%",
     rotate: 5,
-    width: "clamp(90px, 12vw, 150px)",
+    className: "top-[38%] left-[0%] w-[80px] md:top-[40%] md:left-[5%] md:w-[clamp(90px,12vw,150px)]",
   },
 
   // ── TOP RIGHT ──
@@ -50,20 +43,16 @@ const STICKERS: Sticker[] = [
     src: "/sticker_chair.png",
     alt: "Accent chair",
     from: "right",
-    top: "14%",
-    right: "7%",
     rotate: 10,
-    width: "clamp(110px, 14vw, 200px)",
+    className: "top-[4%] -right-[2%] w-[90px] md:top-[12%] md:right-[3%] md:w-[clamp(110px,14vw,200px)]",
   },
   {
     id: "wardrobe",
     src: "/sticker_wardrobe.png",
     alt: "Aesthetic Wardrobe",
     from: "right",
-    top: "40%",
-    right: "8%",
     rotate: -3,
-    width: "clamp(110px, 14vw, 220px)",
+    className: "top-[35%] right-[0%] w-[100px] md:top-[42%] md:right-[4%] md:w-[clamp(110px,14vw,220px)]",
   },
 
   // ── BOTTOM CENTER CLUSTER ──
@@ -72,30 +61,24 @@ const STICKERS: Sticker[] = [
     src: "/sticker_lamp.png",
     alt: "Floor lamp",
     from: "bottom",
-    top: "55%",
-    left: "15%",
     rotate: -4,
-    width: "clamp(90px, 12vw, 180px)",
+    className: "top-[72%] left-[2%] w-[70px] md:top-[70%] md:left-[12%] md:w-[clamp(90px,12vw,180px)]",
   },
   {
     id: "bed",
     src: "/sticker_bed.png",
     alt: "Luxury Bed",
     from: "bottom",
-    top: "60%",
-    left: "39%",
     rotate: 0,
-    width: "clamp(160px, 20vw, 300px)",
+    className: "bottom-[-2%] left-[25%] w-[160px] md:bottom-auto md:top-[65%] md:left-[40%] md:w-[clamp(160px,20vw,300px)]",
   },
   {
     id: "vase",
     src: "/sticker_vase.png",
     alt: "Decorative vase",
     from: "bottom",
-    top: "65%",
-    right: "18%",
     rotate: 6,
-    width: "clamp(75px, 10vw, 130px)",
+    className: "top-[77%] right-[2%] w-[60px] md:top-[75%] md:right-[15%] md:w-[clamp(75px,10vw,130px)]",
   },
 ];
 
@@ -167,12 +150,8 @@ const CTASection = () => {
           <div
             key={sticker.id}
             ref={(el) => { stickerRefs.current[i] = el; }}
+            className={`absolute ${sticker.className}`}
             style={{
-              position: "absolute",
-              top: sticker.top,
-              left: sticker.left,
-              right: sticker.right,
-              width: sticker.width,
               willChange: "transform, opacity",
               // Since the images have true transparent backgrounds, 
               // we no longer need any CSS mixBlendMode hacks!

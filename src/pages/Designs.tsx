@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/Navbar";
@@ -321,19 +322,19 @@ const Designs = () => {
             Get a free 3D preview of your space designed by our award-winning team.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-            <a
-              href="/quote"
+            <Link
+              to="/quote"
               className="group relative inline-flex items-center overflow-hidden rounded-full bg-[#8C5A3C] text-white px-10 py-4 text-sm font-bold tracking-[0.1em] uppercase shadow-[0_0_32px_rgba(140,90,60,0.45)] hover:shadow-[0_0_50px_rgba(140,90,60,0.65)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:scale-95"
             >
               <span className="relative z-10">Get Free Quote</span>
               <span className="absolute inset-0 bg-gradient-to-r from-[#8C5A3C] via-[#C9945A] to-[#8C5A3C] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-            </a>
-            <a
-              href="/consultation"
+            </Link>
+            <Link
+              to="/consultation"
               className="inline-flex items-center gap-2 rounded-full border border-white/15 text-white/80 px-10 py-4 text-sm font-bold tracking-[0.1em] uppercase hover:border-white/35 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95"
             >
               Book Consultation
-            </a>
+            </Link>
           </div>
         </div>
       </div>

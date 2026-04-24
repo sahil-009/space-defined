@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { LampContainer } from "@/components/ui/lamp";
 import { motion } from "motion/react";
 import gsap from "gsap";
@@ -206,8 +207,8 @@ const CTASection = () => {
             Book a free consultation with our design team and discover what's
             possible with premium craftsmanship and precision.
           </p>
-          <a
-            href="/consultation"
+          <Link
+            to="/consultation"
             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full px-12 py-5 text-lg font-semibold text-white cursor-pointer
               bg-[#8C5A3C] border border-[#8C5A3C]/50
               shadow-[0_0_40px_rgba(140,90,60,0.4)]
@@ -217,7 +218,7 @@ const CTASection = () => {
           >
             <span className="relative z-10">Book Consultation</span>
             <span className="absolute inset-0 bg-gradient-to-r from-[#8C5A3C] via-[#C9945A] to-[#8C5A3C] opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-full" />
-          </a>
+          </Link>
         </motion.div>
       </LampContainer>
     </section>

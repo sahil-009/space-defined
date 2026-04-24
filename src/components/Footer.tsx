@@ -48,7 +48,7 @@ const FooterColumn = ({
 const FooterLink = ({ href, label }: { href: string; label: string }) => (
   <a
     href={href}
-    className="group relative inline-flex items-center gap-2 text-sm font-medium text-white/50 hover:text-white transition-colors duration-300 w-fit"
+    className="group relative inline-flex items-center gap-2 text-sm font-medium text-white/65 hover:text-white transition-colors duration-300 w-fit"
   >
     <span className="relative">
       {label}
@@ -76,7 +76,7 @@ const SocialLinks = () => {
           target={href.startsWith("http") ? "_blank" : undefined}
           rel="noopener noreferrer"
           aria-label={label}
-          className="group relative flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-white/5 text-white/40 hover:text-white hover:border-[#8C5A3C]/60 hover:bg-[#8C5A3C]/10 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_16px_rgba(140,90,60,0.35)]"
+          className="group relative flex items-center justify-center w-10 h-10 rounded-full border border-white/12 bg-white/[0.06] text-white/75 hover:text-white hover:border-[#8C5A3C]/60 hover:bg-[#8C5A3C]/10 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_16px_rgba(140,90,60,0.35)]"
         >
           {icon}
         </a>
@@ -94,12 +94,12 @@ const CTASection = () => (
       Start your dream space{" "}
       <span className="italic font-light text-[#A67352]">today.</span>
     </p>
-    <p className="text-sm text-white/40 max-w-[200px] leading-relaxed">
+    <p className="text-sm text-white/75 max-w-[220px] leading-relaxed">
       Let's craft interiors that inspire. Every detail, perfected.
     </p>
     <a
-      href="#contact"
-      className="group relative inline-flex items-center justify-center overflow-hidden rounded-full px-7 py-3 text-sm font-bold tracking-widest uppercase text-white border border-[#8C5A3C]/50 bg-[#8C5A3C]/15 transition-all duration-400 hover:border-[#8C5A3C] hover:bg-[#8C5A3C]/30 hover:shadow-[0_0_32px_rgba(140,90,60,0.3)] hover:-translate-y-0.5 w-fit"
+      href="/consultation"
+      className="group relative inline-flex items-center justify-center overflow-hidden rounded-full px-7 py-3 text-sm font-bold tracking-widest uppercase text-white border border-[#8C5A3C]/50 bg-[#8C5A3C]/15 transition-all duration-400 hover:border-[#8C5A3C] hover:bg-[#8C5A3C]/30 hover:shadow-[0_0_32px_rgba(140,90,60,0.3)] hover:-translate-y-0.5 hover:scale-105 active:scale-95 w-fit"
     >
       <span className="relative z-10">Book Consultation</span>
       <span className="absolute inset-0 bg-gradient-to-r from-[#8C5A3C]/0 via-[#A67352]/20 to-[#8C5A3C]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
@@ -117,7 +117,7 @@ const BackToTop = () => {
     <button
       onClick={handleClick}
       aria-label="Back to top"
-      className="group flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase text-white/30 hover:text-[#A67352] transition-colors duration-300"
+      className="group flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase text-white/60 hover:text-[#A67352] transition-colors duration-300"
     >
       <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-white/10 group-hover:border-[#8C5A3C]/50 group-hover:bg-[#8C5A3C]/10 transition-all duration-300 group-hover:-translate-y-0.5">
         <svg
@@ -267,13 +267,13 @@ const Footer = () => {
           {/* Right CTA */}
           <div className="flex flex-col items-center lg:items-end gap-4">
             <a
-              href="#contact"
-              className="group relative inline-flex items-center overflow-hidden rounded-full bg-[#8C5A3C] text-white px-10 py-4 text-sm font-bold tracking-[0.15em] uppercase shadow-[0_8px_30px_rgba(140,90,60,0.3)] hover:shadow-[0_8px_40px_rgba(140,90,60,0.5)] transition-all duration-400 hover:-translate-y-1"
+              href="/consultation"
+              className="group relative inline-flex items-center overflow-hidden rounded-full bg-[#8C5A3C] text-white px-10 py-4 text-sm font-bold tracking-[0.15em] uppercase shadow-[0_8px_30px_rgba(140,90,60,0.3)] hover:shadow-[0_8px_40px_rgba(140,90,60,0.5)] hover:scale-105 active:scale-95 transition-all duration-400 hover:-translate-y-1"
             >
               <span className="relative z-10">Book Consultation</span>
               <span className="absolute inset-0 bg-gradient-to-r from-[#8C5A3C] to-[#A67352] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
-            <p className="text-[11px] text-white/30 tracking-wider">
+            <p className="text-[11px] text-white/65 tracking-wider">
               Free initial consultation · No commitment
             </p>
           </div>
@@ -293,13 +293,13 @@ const Footer = () => {
           >
             <img src="/logo.jpeg" alt="Cabinet Factory" className="h-12 w-auto object-contain rounded-md brightness-0 invert opacity-90" />
           </a>
-          <p className="text-sm text-white/35 leading-relaxed max-w-[200px]">
+          <p className="text-sm text-white/65 leading-relaxed max-w-[200px]">
             Transforming living spaces into luxury experiences through precision
             craftsmanship and timeless design.
           </p>
           <SocialLinks />
           <div className="mt-2">
-            <span className="inline-block text-[9px] font-bold tracking-[0.3em] uppercase text-white/20 border border-white/10 rounded-full px-3 py-1">
+            <span className="inline-block text-[9px] font-bold tracking-[0.3em] uppercase text-white/80 border border-white/30 rounded-full px-3 py-1">
               Since 2010
             </span>
           </div>
@@ -329,7 +329,7 @@ const Footer = () => {
                   <span className="text-base leading-none mt-0.5 opacity-60">
                     {icon}
                   </span>
-                  <span className="text-sm text-white/45 leading-snug">
+                  <span className="text-sm text-white/70 leading-snug">
                     {text}
                   </span>
                 </li>
@@ -359,7 +359,7 @@ const Footer = () => {
         ref={bottomRef}
         className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col sm:flex-row items-center justify-between gap-6"
       >
-        <p className="text-[11px] text-white/20 tracking-wider">
+        <p className="text-[11px] text-white/75 tracking-wider">
           © {new Date().getFullYear()} Cabinet Factory. All rights reserved.
         </p>
         <div className="flex items-center gap-8">
@@ -367,7 +367,7 @@ const Footer = () => {
             <a
               key={item}
               href="#"
-              className="text-[11px] text-white/20 hover:text-white/50 tracking-wider transition-colors duration-300"
+              className="text-[11px] text-white/75 hover:text-white/90 tracking-wider transition-colors duration-300"
             >
               {item}
             </a>

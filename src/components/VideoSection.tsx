@@ -45,11 +45,11 @@ const VideoSection = () => {
   return (
     <section ref={sectionRef} className="relative bg-cream">
       {/* Full-width beam background with cinematic scaling */}
-      <div className="video-frame relative w-full h-[60vh] lg:h-[85vh] overflow-hidden">
+      <div className="video-frame relative w-full h-[50vh] sm:h-[65vh] lg:h-[85vh] overflow-hidden">
         <BackgroundBeamsWithCollision className="h-full w-full bg-charcoal/20">
-          <div className="text-center px-6 relative z-20">
-            <p className="text-sm font-semibold tracking-[0.3em] uppercase text-accent mb-5">Immersive Experience</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-foreground leading-tight max-w-4xl tracking-tight">
+          <div className="text-center px-4 sm:px-6 relative z-20">
+          <p className="text-sm font-bold tracking-[0.28em] uppercase text-[#C9945A] mb-5">Immersive Experience</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight max-w-4xl tracking-tight drop-shadow-2xl">
               Where Design{" "}
               <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))] italic">
                 <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
@@ -65,9 +65,9 @@ const VideoSection = () => {
       </div>
 
       {/* Content below video */}
-      <div className="video-content max-w-6xl mx-auto px-6 lg:px-8 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div>
+      <div className="video-content max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+          <div className="text-center lg:text-left">
             <p className="text-sm font-semibold tracking-[0.2em] uppercase text-accent mb-5">Our Process</p>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight mb-6">
               Every detail is rendered with <span className="text-gradient-gold">precision</span>
@@ -83,15 +83,16 @@ const VideoSection = () => {
             </p>
           </div>
 
-          {/* 3D Model — raw Three.js, GLB camera + looping animation */}
-          <div
-            className="w-full rounded-2xl overflow-hidden"
-            style={{ aspectRatio: "4 / 3", minHeight: "320px" }}
-          >
-            <Model3D
-              src="/models/newoutput.glb"
-              style={{ width: "100%", height: "100%" }}
-            />
+          {/* 3D Model — centered on mobile */}
+          <div className="flex items-center justify-center w-full">
+            <div
+              className="w-full max-w-[460px] mx-auto rounded-2xl overflow-hidden aspect-[4/3]"
+            >
+              <Model3D
+                src="/models/newoutput.glb"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
           </div>
         </div>
       </div>

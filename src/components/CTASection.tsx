@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
 import { LampContainer } from "@/components/ui/lamp";
 import { motion } from "motion/react";
 import gsap from "gsap";
@@ -201,18 +200,24 @@ const CTASection = () => {
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-8 drop-shadow-2xl">
             Ready to transform
             <br />
-            <span className="text-gradient-gold">your space?</span>
+            <span className="text-gradient-gold-bright">your space?</span>
           </h2>
-          <p className="text-lg text-white/70 mb-12 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-white/80 mb-12 max-w-xl mx-auto leading-relaxed">
             Book a free consultation with our design team and discover what's
             possible with premium craftsmanship and precision.
           </p>
-          <Button
-            size="lg"
-            className="bg-[#8C5A3C] text-white hover:bg-[#A67352] rounded-full px-12 py-7 text-lg font-semibold shadow-[0_0_40px_rgba(140,90,60,0.4)] transition-all duration-300 hover:scale-105 border border-[#8C5A3C]/50 hover:shadow-[0_0_60px_rgba(140,90,60,0.6)] active:scale-95 transition-all duration-1000"
+          <a
+            href="/consultation"
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full px-12 py-5 text-lg font-semibold text-white cursor-pointer
+              bg-[#8C5A3C] border border-[#8C5A3C]/50
+              shadow-[0_0_40px_rgba(140,90,60,0.4)]
+              hover:bg-[#A67352] hover:shadow-[0_0_60px_rgba(140,90,60,0.65)]
+              hover:scale-105 active:scale-95
+              transition-all duration-300"
           >
-            Book Consultation
-          </Button>
+            <span className="relative z-10">Book Consultation</span>
+            <span className="absolute inset-0 bg-gradient-to-r from-[#8C5A3C] via-[#C9945A] to-[#8C5A3C] opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-full" />
+          </a>
         </motion.div>
       </LampContainer>
     </section>

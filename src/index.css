@@ -17,7 +17,7 @@
     --secondary: 40 4% 95%;
     --secondary-foreground: 0 0% 10%;
     --muted: 40 4% 95%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 38%;
     --accent: 22.5 40% 39.2%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84% 60%;
@@ -100,11 +100,28 @@
 
 @layer utilities {
   .text-gradient-gold {
-    background: linear-gradient(135deg, #8C5A3C, #A67352);
+    background: linear-gradient(135deg, #7A4A30 0%, #C9945A 50%, #8C5A3C 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-style: italic;
+  }
+
+  /* Strong gold — brighter, for dark backgrounds */
+  .text-gradient-gold-bright {
+    background: linear-gradient(135deg, #C9945A 0%, #E8B87A 50%, #C9945A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: italic;
+  }
+
+  /* Readable white for dark-bg sections */
+  .text-on-dark {
+    color: rgba(255, 255, 255, 0.88);
+  }
+  .text-on-dark-muted {
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .glass {

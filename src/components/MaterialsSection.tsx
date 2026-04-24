@@ -119,11 +119,11 @@ const MaterialsSection = () => {
         </div>
 
         {/* Materials grid */}
-        <div className="mat-grid grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mat-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {materials.map((m, i) => (
             <div
               key={i}
-              className="material-card group relative h-[400px] lg:h-[480px] rounded-3xl overflow-hidden cursor-pointer"
+              className="material-card group relative h-[320px] sm:h-[380px] lg:h-[480px] rounded-2xl lg:rounded-3xl overflow-hidden cursor-pointer"
               onMouseEnter={(e) => handleHover(i, e)}
               onMouseLeave={handleLeave}
             >
@@ -141,24 +141,24 @@ const MaterialsSection = () => {
               <div className="mat-overlay absolute inset-0 bg-black/30 backdrop-blur-[2px] opacity-0" />
 
               {/* Default label */}
-              <div className={`absolute bottom-0 left-0 right-0 p-6 z-10 transition-opacity duration-300 ${hoveredIndex === i ? "opacity-0" : "opacity-100"}`}>
-                <span className="text-xs font-bold tracking-[0.2em] uppercase text-accent">{m.texture}</span>
-                <h3 className="text-2xl font-extrabold text-white mt-1">{m.name}</h3>
+              <div className={`absolute bottom-0 left-0 right-0 p-5 z-10 transition-opacity duration-300 ${hoveredIndex === i ? "opacity-0" : "opacity-100"}`}>
+                <span className="text-[10px] font-black tracking-[0.22em] uppercase text-[#E8B87A]">{m.texture}</span>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white mt-1 drop-shadow-lg">{m.name}</h3>
               </div>
 
               {/* Revealed details */}
               <div className="mat-details absolute inset-0 flex flex-col items-center justify-center text-center px-6 translate-y-[20px] opacity-0 z-20">
-                <span className="text-xs font-bold tracking-[0.25em] uppercase text-accent mb-3">{m.origin}</span>
-                <h3 className="text-2xl font-extrabold text-white mb-2">{m.name}</h3>
-                <div className="w-10 h-[2px] bg-accent mb-4" />
-                <p className="text-sm text-white/80 leading-relaxed max-w-[220px]">{m.desc}</p>
-                <div className="mt-5 px-5 py-2 border border-white/30 rounded-full text-xs text-white/90 font-semibold tracking-wider uppercase hover:bg-white/10 transition-colors">
+                <span className="text-[10px] font-black tracking-[0.28em] uppercase text-[#E8B87A] mb-3">{m.origin}</span>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-2 drop-shadow-lg">{m.name}</h3>
+                <div className="w-10 h-[2px] bg-[#C9945A] mb-4" />
+                <p className="text-sm text-white/90 leading-relaxed max-w-[220px]">{m.desc}</p>
+                <div className="mt-5 px-5 py-2 border border-white/40 rounded-full text-xs text-white font-bold tracking-wider uppercase hover:bg-white/15 transition-colors">
                   Explore
                 </div>
               </div>
 
               {/* Corner number */}
-              <div className="absolute top-5 right-5 z-10 text-white/15 text-5xl font-black select-none">
+              <div className="absolute top-5 right-5 z-10 text-white/40 text-5xl font-black select-none">
                 0{i + 1}
               </div>
             </div>

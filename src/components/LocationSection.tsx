@@ -15,7 +15,7 @@ const LocationSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 items-stretch">
           {/* Contact Info Box */}
           <div className="bg-[#111] border border-white/5 rounded-2xl p-8 lg:p-12 flex flex-col justify-center">
-            <h3 className="text-2xl font-bold tracking-wide uppercase mb-2">R U Interior Designs</h3>
+            <h3 className="text-2xl font-bold tracking-wide uppercase mb-2 text-white">R U Interior Designs</h3>
             <p className="text-accent/80 text-sm mb-10 font-medium">(RAJU)</p>
 
             <div className="space-y-8">

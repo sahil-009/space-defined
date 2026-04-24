@@ -35,7 +35,7 @@ const FAQSection = () => {
     <section className="py-24 bg-[#0a0a0a] text-white">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-xs font-bold tracking-[0.2em] uppercase text-accent mb-4">Common Questions</p>
+          <p className="text-xs font-bold tracking-[0.22em] uppercase text-[#C9945A] mb-4">Common Questions</p>
           <h2 className="text-4xl md:text-5xl font-extrabold">
             Frequently Asked <span className="text-accent italic font-serif">Questions</span>
           </h2>
@@ -50,7 +50,7 @@ const FAQSection = () => {
                    className="w-full flex items-center justify-between py-6 text-left hover:text-accent transition-colors duration-300 group"
                    onClick={() => toggleFaq(index)}
                  >
-                   <span className="text-lg lg:text-xl font-medium">{faq.question}</span>
+                   <span className="text-base sm:text-lg lg:text-xl font-semibold text-white">{faq.question}</span>
                    <div className={`w-8 h-8 rounded-full flex items-center justify-center border transition-colors duration-300 ml-4 shrink-0 ${isOpen ? 'border-accent text-accent' : 'border-white/20 text-white group-hover:border-accent group-hover:text-accent'}`}>
                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                    </div>
@@ -58,7 +58,7 @@ const FAQSection = () => {
                  <div
                    className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"}`}
                  >
-                   <div className="overflow-hidden text-white/60 text-sm lg:text-base leading-relaxed pr-12">
+                   <div className="overflow-hidden text-white/78 text-sm lg:text-base leading-relaxed pr-8 sm:pr-12">
                      {faq.answer}
                    </div>
                  </div>

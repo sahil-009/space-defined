@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
     },
   ];
   return (
-    <section className="py-24 bg-background">
+    <section id="testimonials" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <p className="text-sm font-semibold tracking-[0.25em] uppercase text-accent mb-5">Client Stories</p>

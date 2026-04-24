@@ -99,13 +99,13 @@ const InteractiveShowcase = () => {
         </div>
 
         {/* Interactive accordion panels */}
-        <div className="showcase-accordion flex flex-col lg:flex-row gap-3 h-[450px] lg:h-[600px]">
+        <div className="showcase-accordion flex flex-col sm:flex-row gap-3 h-[520px] sm:h-[500px] lg:h-[600px]">
           {showcaseItems.map((item, i) => (
             <div
               key={i}
-              className={`relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                activeIndex === i ? "lg:flex-[4]" : activeIndex !== null ? "lg:flex-[0.7]" : "lg:flex-1"
-              } ${activeIndex === i ? "flex-[3]" : "flex-1"}`}
+              className={`relative overflow-hidden rounded-2xl lg:rounded-3xl cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]
+                ${activeIndex === i ? "flex-[3] sm:flex-[4]" : activeIndex !== null ? "flex-[0.6]" : "flex-1"}
+              `}
               onMouseEnter={(e) => handleMouseEnter(i, e)}
               onMouseLeave={handleMouseLeave}
             >
@@ -119,17 +119,17 @@ const InteractiveShowcase = () => {
 
               {/* Default label */}
               <div className={`absolute bottom-0 left-0 right-0 p-6 z-10 transition-opacity duration-300 ${activeIndex === i ? "opacity-0" : "opacity-100"}`}>
-                <span className="text-xs font-bold tracking-[0.2em] uppercase text-accent">{item.category}</span>
-                <h3 className="text-xl font-extrabold text-white mt-1">{item.title}</h3>
+                <span className="text-[10px] font-black tracking-[0.22em] uppercase text-[#E8B87A]">{item.category}</span>
+                <h3 className="text-lg sm:text-xl font-extrabold text-white mt-1 drop-shadow-lg">{item.title}</h3>
               </div>
 
               {/* Hover reveal */}
               <div className="card-content absolute inset-0 flex flex-col items-center justify-center text-center px-8 translate-y-[30px] opacity-0 z-20">
-                <span className="text-xs font-bold tracking-[0.25em] uppercase text-accent mb-3">{item.category}</span>
-                <h3 className="text-2xl lg:text-3xl font-extrabold text-white mb-4">{item.title}</h3>
-                <div className="card-line w-12 h-[2px] bg-accent mb-4 origin-left scale-x-0" />
-                <p className="text-sm text-white/80 leading-relaxed max-w-xs">{item.desc}</p>
-                <div className="mt-6 inline-flex items-center gap-2 text-accent text-sm font-semibold group/link">
+                <span className="text-[10px] font-black tracking-[0.28em] uppercase text-[#E8B87A] mb-3">{item.category}</span>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white mb-4 drop-shadow-lg">{item.title}</h3>
+                <div className="card-line w-12 h-[2px] bg-[#C9945A] mb-4 origin-left scale-x-0" />
+                <p className="text-sm text-white/90 leading-relaxed max-w-xs">{item.desc}</p>
+                <div className="mt-6 inline-flex items-center gap-2 text-[#C9945A] text-sm font-bold group/link">
                   View Project
                   <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -137,7 +137,7 @@ const InteractiveShowcase = () => {
                 </div>
               </div>
 
-              <div className="absolute top-6 right-6 z-10 text-white/15 text-6xl font-black select-none">
+              <div className="absolute top-6 right-6 z-10 text-white/40 text-6xl font-black select-none">
                 0{i + 1}
               </div>
             </div>

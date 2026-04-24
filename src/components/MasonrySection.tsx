@@ -547,7 +547,7 @@ const MasonrySection = () => {
             })}
           </div>
 
-          <span className="text-[11px] font-black tabular-nums tracking-widest text-white/25">
+          <span className="text-[11px] font-black tabular-nums tracking-widest text-white/60">
             {String(CARD_N).padStart(2, "0")}
           </span>
         </div>
@@ -594,7 +594,7 @@ const MasonrySection = () => {
 
         {/* ── Scroll hint ── */}
         <div className="mt-8 flex flex-col items-center gap-2">
-          <p className="text-[8px] tracking-[0.55em] uppercase font-black text-white/25">
+          <p className="text-[8px] tracking-[0.55em] uppercase font-black text-white/60">
             Scroll to Reveal
           </p>
           <div className="relative rounded-full overflow-hidden"

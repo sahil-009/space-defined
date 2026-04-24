@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { gsap } from "gsap";
 import { AuroraBackground } from "@/components/ui/aurora-background";
@@ -89,12 +90,16 @@ const HeroSection = () => {
               Experience next-generation modular interiors engineered with precision and elegance.
             </p>
             <div ref={ctaRef} className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-[#8C5A3C] text-white hover:bg-[#7A4E34] rounded-full px-8 text-base font-semibold">
-                Explore Designs
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 text-base font-semibold border-2 border-foreground/20 hover:border-foreground/40">
-                Get Quote
-              </Button>
+              <Link to="/designs">
+                <Button size="lg" className="bg-[#8C5A3C] text-white hover:bg-[#7A4E34] hover:shadow-[0_4px_24px_rgba(140,90,60,0.45)] hover:scale-105 active:scale-95 rounded-full px-8 text-base font-semibold transition-all duration-300">
+                  Explore Designs
+                </Button>
+              </Link>
+              <Link to="/quote">
+                <Button size="lg" variant="outline" className="rounded-full px-8 text-base font-semibold border-2 border-foreground/20 hover:border-[#8C5A3C]/50 hover:scale-105 active:scale-95 transition-all duration-300">
+                  Get Quote
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

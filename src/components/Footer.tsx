@@ -1,4 +1,5 @@
 import { useEffect, useRef, Suspense, lazy } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -97,13 +98,13 @@ const CTASection = () => (
     <p className="text-sm text-white/75 max-w-[220px] leading-relaxed">
       Let's craft interiors that inspire. Every detail, perfected.
     </p>
-    <a
-      href="/consultation"
+    <Link
+      to="/consultation"
       className="group relative inline-flex items-center justify-center overflow-hidden rounded-full px-7 py-3 text-sm font-bold tracking-widest uppercase text-white border border-[#8C5A3C]/50 bg-[#8C5A3C]/15 transition-all duration-400 hover:border-[#8C5A3C] hover:bg-[#8C5A3C]/30 hover:shadow-[0_0_32px_rgba(140,90,60,0.3)] hover:-translate-y-0.5 hover:scale-105 active:scale-95 w-fit"
     >
       <span className="relative z-10">Book Consultation</span>
       <span className="absolute inset-0 bg-gradient-to-r from-[#8C5A3C]/0 via-[#A67352]/20 to-[#8C5A3C]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
-    </a>
+    </Link>
   </div>
 );
 
@@ -266,13 +267,13 @@ const Footer = () => {
 
           {/* Right CTA */}
           <div className="flex flex-col items-center lg:items-end gap-4">
-            <a
-              href="/consultation"
+            <Link
+              to="/consultation"
               className="group relative inline-flex items-center overflow-hidden rounded-full bg-[#8C5A3C] text-white px-10 py-4 text-sm font-bold tracking-[0.15em] uppercase shadow-[0_8px_30px_rgba(140,90,60,0.3)] hover:shadow-[0_8px_40px_rgba(140,90,60,0.5)] hover:scale-105 active:scale-95 transition-all duration-400 hover:-translate-y-1"
             >
               <span className="relative z-10">Book Consultation</span>
               <span className="absolute inset-0 bg-gradient-to-r from-[#8C5A3C] to-[#A67352] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </a>
+            </Link>
             <p className="text-[11px] text-white/65 tracking-wider">
               Free initial consultation · No commitment
             </p>

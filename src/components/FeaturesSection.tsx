@@ -106,22 +106,24 @@ const FeaturesSection = () => {
         </div>
 
         {/* Alternating Layout Grid */}
-        <div className="mt-20 flex flex-col gap-24 lg:gap-32">
+        <div className="mt-16 sm:mt-20 flex flex-col gap-16 sm:gap-24 lg:gap-32">
           {/* Row 1 */}
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
             <div className="flex-1 lg:pr-10 lg:text-left text-center">
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight mb-6">Precision engineering.</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-md mx-auto lg:mx-0">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-foreground tracking-tight mb-4">
+                Precision engineering.
+              </h3>
+              <p className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-md mx-auto lg:mx-0">
                 Each panel is expertly machined for a seamless fit, ensuring long lasting durability.
               </p>
             </div>
-            <div className="flex-1 w-full">
-              <img 
-                src="/pic9.jpeg" 
-                alt="Precision Engineering" 
-                className="w-full h-[400px] lg:h-[500px] object-cover rounded-[2rem] shadow-2xl lg:translate-x-4 hover:scale-[1.02] transition-transform duration-700" 
-              />
-            </div>
+              <div className="flex-1 w-full">
+                <img
+                  src="/pic9.jpeg"
+                  alt="Precision Engineering"
+                  className="w-full h-[260px] sm:h-[360px] lg:h-[500px] object-cover rounded-2xl lg:rounded-[2rem] shadow-2xl hover:scale-[1.02] transition-transform duration-700"
+                />
+              </div>
           </div>
 
           {/* Row 2 */}
@@ -132,13 +134,13 @@ const FeaturesSection = () => {
                 We select rich walnut, matte charcoal, and subtle woods for a refined, contemporary feel.
               </p>
             </div>
-            <div className="flex-1 w-full">
-              <img 
-                src="/pic6.jpeg" 
-                alt="Premium materials" 
-                className="w-full h-[400px] lg:h-[500px] object-cover rounded-[2rem] shadow-2xl lg:-translate-x-4 hover:scale-[1.02] transition-transform duration-700" 
-              />
-            </div>
+              <div className="flex-1 w-full">
+                <img
+                  src="/pic6.jpeg"
+                  alt="Premium materials"
+                  className="w-full h-[260px] sm:h-[360px] lg:h-[500px] object-cover rounded-2xl lg:rounded-[2rem] shadow-2xl hover:scale-[1.02] transition-transform duration-700"
+                />
+              </div>
           </div>
 
           {/* Row 3 */}
@@ -149,13 +151,13 @@ const FeaturesSection = () => {
                 Enjoy exceptional pricing and service from our own state-of-the-art manufacturing facility.
               </p>
             </div>
-            <div className="flex-1 w-full">
-              <img 
-                src="/pic8.jpeg" 
-                alt="Factory direct" 
-                className="w-full h-[400px] lg:h-[500px] object-cover rounded-[2rem] shadow-2xl lg:translate-x-4 hover:scale-[1.02] transition-transform duration-700" 
-              />
-            </div>
+              <div className="flex-1 w-full">
+                <img
+                  src="/pic8.jpeg"
+                  alt="Factory direct"
+                  className="w-full h-[260px] sm:h-[360px] lg:h-[500px] object-cover rounded-2xl lg:rounded-[2rem] shadow-2xl hover:scale-[1.02] transition-transform duration-700"
+                />
+              </div>
           </div>
         </div>
       </div>
